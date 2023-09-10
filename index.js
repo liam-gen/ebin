@@ -14,6 +14,11 @@ app.get('/', (req, res) => {
     res.sendFile(gFile(`index.html`));
 });
 
+
+app.get('/services/:name', (req, res) => {
+    res.sendFile(gFile(`services/`+req.params.name+".html"));
+});
+
 app.listen(3000, () => {
     console.log('Server running on port 3000');
 });
